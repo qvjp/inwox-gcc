@@ -768,6 +768,14 @@ x86_64-*-freebsd*)
 	tmake_file="${tmake_file} i386/t-freebsd i386/t-crtstuff"
 	md_unwind_header=i386/freebsd-unwind.h
 	;;
+i[34567]86-*-inwox*)
+	extra_parts="$extra_parts crtbegin.o crtend.o"
+	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
+	;;
+x86_64-*-inwox*)
+	extra_parts="$extra_parts crtbegin.o crtend.o"
+	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
+	;;
 i[34567]86-*-netbsdelf*)
 	tmake_file="${tmake_file} i386/t-crtstuff"
 	;;
